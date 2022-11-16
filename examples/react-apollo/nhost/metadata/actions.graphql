@@ -1,0 +1,16 @@
+type Query {
+  filePresignedUrl(
+    id: String!
+  ): FilePresignedUrl
+}
+
+type PresignedUrl {
+  url: String!
+  expiration: Int!
+}
+
+type FilePresignedUrl {
+  url: String!
+  expiration: Int!
+}
+
