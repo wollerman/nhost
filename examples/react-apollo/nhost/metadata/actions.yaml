@@ -3,7 +3,6 @@ actions:
     definition:
       kind: ""
       handler: '{{NHOST_BACKEND_URL}}/v1/storage/files/'
-      forward_client_headers: true
       headers:
         - name: x-hasura-admin-secret
           value_from_env: NHOST_ADMIN_SECRET
