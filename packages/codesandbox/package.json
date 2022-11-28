@@ -1,7 +1,7 @@
 {
   "name": "@nhost/codesandbox",
   "version": "0.0.1",
-  "description": "",
+  "description": "Loads a codesandbox project from GitHub, with additional files",
   "license": "MIT",
   "keywords": [
     "nhost",
