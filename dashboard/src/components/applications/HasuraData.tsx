@@ -1,10 +1,11 @@
 import { ConnectionDetail } from '@/components/applications/ConnectionDetail';
 import { LoadingScreen } from '@/components/common/LoadingScreen';
-import ExternalLink from '@/components/icons/ExternalIcon';
 import { useCurrentWorkspaceAndApplication } from '@/hooks/useCurrentWorkspaceAndApplication';
 import Button from '@/ui/v2/Button';
+import ArrowSquareOutIcon from '@/ui/v2/icons/ArrowSquareOutIcon';
 import Link from '@/ui/v2/Link';
 import Text from '@/ui/v2/Text';
+import { LOCAL_HASURA_URL } from '@/utils/env';
 import { generateRemoteAppUrl } from '@/utils/helpers';
 import Image from 'next/image';
 
@@ -24,7 +25,7 @@ export function HasuraData({ close }: HasuraDataProps) {
 
   const hasuraUrl =
     process.env.NEXT_PUBLIC_ENV === 'dev'
-      ? process.env.NEXT_PUBLIC_NHOST_HASURA_URL || 'http://localhost:9695'
+      ? LOCAL_HASURA_URL
       : generateRemoteAppUrl(currentApplication.subdomain);
 
   return (
@@ -66,7 +67,7 @@ export function HasuraData({ close }: HasuraDataProps) {
             underline="none"
           >
             Open Hasura
-            <ExternalLink className="ml-0.5 h-4 w-4" />
+            <ArrowSquareOutIcon className="h-4 w-4" />
           </Link>
 
           {close && (

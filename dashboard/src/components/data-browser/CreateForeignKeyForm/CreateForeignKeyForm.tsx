@@ -24,7 +24,7 @@ export interface CreateForeignKeyFormProps
   onSubmit?: (values: BaseForeignKeyFormValues) => Promise<void>;
 }
 
-export function CreateForeignKeyForm({
+export default function CreateForeignKeyForm({
   onSubmit,
   selectedColumn,
   ...props
@@ -43,7 +43,7 @@ export function CreateForeignKeyForm({
       updateAction: 'RESTRICT',
       deleteAction: 'RESTRICT',
     },
-    reValidateMode: 'onBlur',
+    reValidateMode: 'onSubmit',
     resolver: yupResolver(baseForeignKeyValidationSchema),
   });
 

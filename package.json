@@ -27,8 +27,9 @@
     "coverage": "pnpm run test -- --coverage",
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write .",
-    "lint": "turbo run lint",
+    "lint": "pnpm run lint:all --filter=!@nhost/dashboard",
     "lint:dashboard": "turbo run lint --filter=@nhost/dashboard",
+    "lint:all": "turbo run lint",
     "lint:fix": "turbo run lint:fix",
     "prerelease": "pnpm clean && pnpm install && pnpm build",
     "release": "pnpm run prerelease && changeset publish",
@@ -37,7 +38,7 @@
     "test:dashboard": "turbo run test --filter=@nhost/dashboard",
     "e2e": "turbo run e2e --concurrency=1",
     "changeset": "changeset",
-    "docgen": "turbo run build --filter=@nhost/docgen --no-deps && turbo run docgen --filter='@nhost/*' && :",
+    "docgen": "turbo run build --filter=@nhost/docgen --no-deps && pnpm i && turbo run docgen --filter=!@nhost/docgen --filter=@nhost/* && :",
     "sync-versions": "turbo run start --filter=@nhost/sync-versions --no-deps"
   },
   "workspaces": [
@@ -85,10 +86,10 @@
   "resolutions": {
     "graphql": "15.7.2"
   },
-  "packageManager": "pnpm@7.9.1",
+  "packageManager": "pnpm@7.17.0",
   "engines": {
-    "node": ">=14 <17",
-    "pnpm": ">=7.9.1"
+    "node": ">=16 <17",
+    "pnpm": ">=7.17.0"
   },
   "eslintConfig": {
     "extends": "./config/.eslintrc.js"
