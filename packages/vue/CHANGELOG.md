@@ -1,5 +1,36 @@
 # @nhost/vue
 
+## 0.6.0
+
+### Minor Changes
+
+- f6d2042a: `useFileUpload` composable to upload a file useFileUpload composable
+
+### Patch Changes
+
+- 843087cb: Make `useUserRoles` reactive
+
+## 0.5.3
+
+### Patch Changes
+
+- Updated dependencies [f2aaff05]
+  - @nhost/core@0.9.3
+  - @nhost/hasura-storage-js@0.7.3
+  - @nhost/nhost-js@1.6.1
+
+## 0.5.2
+
+### Patch Changes
+
+- Updated dependencies [996e8016]
+- Updated dependencies [996e8016]
+- Updated dependencies [869e7253]
+- Updated dependencies [996e8016]
+- Updated dependencies [b5395be2]
+  - @nhost/core@0.9.2
+  - @nhost/nhost-js@1.6.0
+
 ## 0.5.1
 
 ### Patch Changes
